@@ -23,10 +23,10 @@ function codeGenerator (req,res, next) {
   var qr_svg = qr.image(url);
   qr_svg.pipe(fs.createWriteStream('qr-code.png'));
 
-  fs.writeFile("url.txt", url, (err) => {
-      if (err) throw err;
-      console.log('The URL has been saved!');
-    }); 
+  // fs.writeFile("url.txt", url, (err) => {
+  //     if (err) throw err;
+  //     console.log('The URL has been saved!');
+  //   }); 
   res.sendFile(__dirname + "/qr-code.png");
 }
 
